@@ -1,0 +1,11 @@
+{
+  "name": "똥 홈런 레전드",
+  "short_name": "똥홈런",
+  "description": "타이밍과 파워로 최고 비거리에 도전하는 모바일 캐주얼 게임",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#34214c",
+  "theme_color": "#6f46d9",
+  "icons": [{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
