@@ -54,6 +54,25 @@
   <section class="screen list-screen" id="rankingScreen"><div class="title"><span>RANKING</span><h2>최고 비거리</h2><p>내 기기의 최고 기록 순위입니다.</p></div><div class="podium" id="rankingPodium"></div><div class="card-list compact" id="rankingList"></div></section>
 </main>
 
+<div class="prep-modal" id="prepModal">
+  <div class="prep-card">
+    <span class="prep-kicker" id="prepMode">STORY PREP</span>
+    <h2>배변 준비실</h2>
+    <div class="prep-condition">
+      <div class="prep-face" id="prepFace">●</div>
+      <div><small>오늘의 컨디션</small><b id="prepCondition">보통</b><p id="prepConditionDesc">무난한 하루입니다.</p></div>
+    </div>
+    <div class="prep-section" id="arenaSection"><b>대전 배경 선택</b><div class="arena-grid" id="arenaGrid"></div></div>
+    <div class="prep-section"><b>먹을 아이템 선택</b><div class="boost-grid">
+      <button data-boost="medicine"><span>✚</span><b>회복약</b><small>나쁜 컨디션 → 건강<br>80 코인</small></button>
+      <button data-boost="steroid"><span>⚡</span><b>파워 증강제</b><small>이번 판 거리 +50%<br>150 코인</small></button>
+    </div></div>
+    <div class="prep-total"><span>선택 비용</span><b id="prepCost">0 코인</b></div>
+    <button class="prep-start" id="prepStartButton">출발 준비!</button>
+    <button class="prep-cancel" id="prepCancelButton">취소</button>
+  </div>
+</div>
+
 <div class="result-modal" id="resultModal"><div class="result-card"><span id="resultKicker">NEW RECORD</span><div class="result-poop" id="resultPoop">●</div><h2 id="resultGrade">PERFECT!</h2><strong id="resultDistance">0 m</strong><p id="resultDetail">10 POWER · 일반똥</p><div class="reward">획득 코인 <b id="resultCoins">+0</b></div><button id="retryButton">한 번 더!</button><button class="text-button" id="homeButton">메인으로</button></div></div>
 <div class="toast" id="toast"></div>
 <script src="main.js"></script>
