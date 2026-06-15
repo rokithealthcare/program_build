@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-  <meta name="theme-color" content="#6d43c4">
+  <meta name="theme-color" content="#6f46d9">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="manifest" href="manifest.webmanifest">
   <title>똥 홈런 레전드</title>
@@ -12,69 +12,72 @@
 <body>
 <main class="app">
   <header class="topbar">
-    <button class="back hidden" id="backButton" aria-label="뒤로">‹</button>
+    <button class="back hidden" id="backButton" aria-label="뒤로 가기">‹</button>
     <div class="brand"><strong>똥 홈런 레전드</strong><span>POOP HOME RUN LEGEND</span></div>
-    <div class="wallet"><small>GOLD</small><b>● <i id="coinCount">0</i></b></div>
+    <div class="wallet"><small>COIN</small><b>● <i id="coinCount">0</i></b></div>
   </header>
 
   <section class="screen active" id="homeScreen">
-    <div class="home-visual">
-      <img src="UI/게임진행화면1.png" alt="게임 진행 화면 미리보기">
-      <div class="home-title"><small>SLINGSHOT ARCADE</small><b>날아오는 똥을<br>새총으로 날려버려!</b></div>
-      <div class="best"><span>최고 점수</span><b id="homeBest">0</b></div>
+    <div class="hero">
+      <div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+      <div class="speech">오늘은 느낌이 온다...!</div>
+      <div class="character"><div class="head"><i></i><i></i><b></b></div><div class="body">!</div><div class="arm left"></div><div class="arm right"></div></div>
+      <div class="best"><span>나의 최고 비거리</span><b id="homeBest">0 m</b></div>
     </div>
     <nav class="main-menu">
-      <button class="menu primary" data-screen="stageScreen"><span>▶</span><b>스토리 모드</b><small id="stageProgress">STAGE 1 / 8</small></button>
-      <button class="menu battle" data-action="battle"><span>⚔</span><b>대전 연습</b><small>원하는 스테이지 선택</small></button>
-      <button class="menu" data-screen="shopScreen"><span>⚒</span><b>무기 상점</b><small>슬링샷 강화</small></button>
-      <button class="menu" data-screen="collectionScreen"><span>▦</span><b>똥 도감</b><small id="collectionProgress">0 / 7</small></button>
-      <button class="menu" data-screen="achievementScreen"><span>★</span><b>업적</b><small id="achievementProgress">0 / 8</small></button>
-      <button class="menu" data-screen="rankingScreen"><span>♛</span><b>기록실</b><small>최고 점수</small></button>
+      <button class="menu primary" data-screen="storyScreen"><span>▶</span><b>스토리 모드</b><small id="stageProgress">STAGE 1 / 100</small></button>
+      <button class="menu battle" data-action="battle"><span>⚔</span><b>대전 모드</b><small id="battleTickets">오늘 3회 무료</small></button>
+      <button class="menu" data-screen="shopScreen"><span>⚒</span><b>상점</b><small>타격 도구</small></button>
+      <button class="menu" data-screen="collectionScreen"><span>▦</span><b>도감</b><small id="collectionProgress">0 / 13</small></button>
+      <button class="menu" data-screen="achievementScreen"><span>★</span><b>업적</b><small id="achievementProgress">0 / 7</small></button>
+      <button class="menu" data-screen="rankingScreen"><span>♛</span><b>랭킹</b><small>최고 기록</small></button>
     </nav>
   </section>
 
   <section class="screen game-screen" id="gameScreen">
-    <div class="game-hud">
-      <div><span id="modeLabel">STORY · STAGE 1</span><b id="locationLabel">동네 공원</b></div>
-      <div class="score-box"><span>SCORE</span><b id="scoreLabel">0</b></div>
-      <div class="condition-box"><span>컨디션</span><b id="conditionLabel">보통</b></div>
-    </div>
-    <div class="boss-hud" id="bossHud"><img src="UI/보스몹.png" alt="보스"><div><span id="bossName">보스</span><div class="hp-track"><i id="bossHp"></i></div></div></div>
-    <div class="playfield">
-      <canvas id="gameCanvas" width="720" height="1160"></canvas>
+    <div class="game-meta"><div><span id="modeLabel">STORY · STAGE 1</span><b id="locationLabel">시골 마을</b></div><div class="condition"><span>컨디션</span><b id="conditionLabel">보통</b></div></div>
+    <div class="game-stage">
+      <canvas id="gameCanvas" width="720" height="1120"></canvas>
       <div class="overlay">
-        <div class="status" id="statusMessage">발사 준비!</div>
-        <div class="judgement" id="judgement"></div>
-        <div class="power" id="powerPanel"><div><span>SLING POWER</span><b id="powerLevel">1</b></div><div class="power-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b id="powerNeedle"></b></div><small>한 번 더 눌러 파워 결정</small></div>
-        <div class="combo" id="comboLabel"></div>
+        <div class="boss-hud" id="bossHud" aria-live="polite">
+          <img src="UI/보스몹.png" alt="">
+          <div><span>BOSS</span><b id="bossName">보스</b><div class="boss-track"><i id="bossHp"></i></div></div>
+        </div>
+        <div class="status" id="statusMessage"></div><div class="judgement" id="judgement"></div>
+        <div class="power" id="powerPanel"><div class="power-title"><span>POWER</span><b id="powerLevel">1</b></div><div class="power-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b id="powerNeedle"></b></div><small>중앙 10단계에서 터치!</small></div>
+        <button class="tap-zone" id="tapZone" aria-label="게임 화면 터치"></button><div class="hint" id="gameHint">화면을 터치해 시작</div>
       </div>
     </div>
-    <div class="game-controls">
-      <div class="round-info"><span>진행</span><b id="waveLabel">0 / 5</b><small id="poopLabel">일반 똥</small></div>
-      <div class="ammo"><i></i><i></i><i></i><span id="lifeLabel">LIFE 3</span></div>
-      <button class="fire-button" id="fireButton"><span>◎</span><b>발사!</b></button>
-    </div>
+    <div class="game-bottom"><div><span>현재 기록</span><b id="distanceLabel">0 m</b></div><div><span>장착 도구</span><b id="equippedLabel">삽</b></div></div>
   </section>
 
-  <section class="screen list-screen" id="stageScreen"><div class="title"><span>STORY MAP</span><h2>8개 스테이지</h2><p>환경을 공략하고 보스를 물리치세요.</p></div><div class="stage-list" id="stageList"></div></section>
-  <section class="screen list-screen" id="shopScreen"><div class="title"><span>SLINGSHOT SHOP</span><h2>무기 상점</h2><p>새총을 강화해 명중 피해와 점수를 높이세요.</p></div><div class="card-list" id="shopList"></div></section>
-  <section class="screen list-screen" id="collectionScreen"><div class="title"><span>POOP COLLECTION</span><h2>똥 도감</h2><p>컨디션에 따라 새로운 똥을 발견하세요.</p></div><div class="collection-grid" id="collectionList"></div></section>
+  <section class="screen list-screen" id="storyScreen"><div class="title"><span>STORY MODE</span><h2>100 스테이지 도전</h2><p>지역을 돌파하고 전설의 홈런왕이 되세요.</p></div><div class="card-list" id="regionList"></div></section>
+  <section class="screen list-screen" id="shopScreen"><div class="title"><span>TOOL SHOP</span><h2>타격 도구 상점</h2><p>장비를 구매하고 장착해 비거리를 늘리세요.</p></div><div class="card-list" id="shopList"></div></section>
+  <section class="screen list-screen" id="collectionScreen"><div class="title"><span>COLLECTION</span><h2>레전드 도감</h2><p>발견한 똥과 장비가 기록됩니다.</p></div><div class="tabs"><button class="active" data-tab="poops">똥</button><button data-tab="tools">장비</button></div><div class="collection-grid" id="collectionList"></div></section>
   <section class="screen list-screen" id="achievementScreen"><div class="title"><span>ACHIEVEMENTS</span><h2>도전 업적</h2></div><div class="card-list" id="achievementList"></div></section>
-  <section class="screen list-screen" id="rankingScreen"><div class="title"><span>RECORDS</span><h2>최고 기록</h2></div><div class="record-hero"><span>BEST SCORE</span><b id="recordBest">0</b></div><div class="card-list" id="rankingList"></div></section>
+  <section class="screen list-screen" id="rankingScreen"><div class="title"><span>RANKING</span><h2>최고 비거리</h2><p>내 기기의 최고 기록 순위입니다.</p></div><div class="podium" id="rankingPodium"></div><div class="card-list compact" id="rankingList"></div></section>
 </main>
 
 <div class="prep-modal" id="prepModal">
   <div class="prep-card">
-    <span id="prepMode">STORY PREP</span><h2>출전 준비</h2>
-    <div class="prep-condition"><div class="prep-face" id="prepFace"></div><div><small>발사 아이 컨디션</small><b id="prepCondition">보통</b><p id="prepConditionDesc"></p></div></div>
-    <div class="prep-section" id="arenaSection"><b>스테이지 선택</b><div class="arena-grid" id="arenaGrid"></div></div>
-    <div class="prep-section"><b>보조 아이템</b><div class="boost-grid"><button data-boost="medicine"><span>✚</span><b>회복약</b><small>나쁨 → 좋음<br>80 골드</small></button><button data-boost="steroid"><span>⚡</span><b>파워 증강제</b><small>피해·점수 +50%<br>150 골드</small></button></div></div>
-    <div class="prep-total"><span>선택 비용</span><b id="prepCost">0 골드</b></div>
-    <button class="prep-start" id="prepStartButton">게임 시작</button><button class="prep-cancel" id="prepCancelButton">취소</button>
+    <span class="prep-kicker" id="prepMode">STORY PREP</span>
+    <h2>배변 준비실</h2>
+    <div class="prep-condition">
+      <div class="prep-face" id="prepFace" role="img" aria-label="현재 컨디션 표정"></div>
+      <div><small>오늘의 컨디션</small><b id="prepCondition">보통</b><p id="prepConditionDesc">무난한 하루입니다.</p></div>
+    </div>
+    <div class="prep-section" id="arenaSection"><b>대전 배경 선택</b><div class="arena-grid" id="arenaGrid"></div></div>
+    <div class="prep-section"><b>먹을 아이템 선택</b><div class="boost-grid">
+      <button data-boost="medicine"><span>✚</span><b>회복약</b><small>나쁜 컨디션 → 건강<br>80 코인</small></button>
+      <button data-boost="steroid"><span>⚡</span><b>파워 증강제</b><small>이번 판 거리 +50%<br>150 코인</small></button>
+    </div></div>
+    <div class="prep-total"><span>선택 비용</span><b id="prepCost">0 코인</b></div>
+    <button class="prep-start" id="prepStartButton">출발 준비!</button>
+    <button class="prep-cancel" id="prepCancelButton">취소</button>
   </div>
 </div>
 
-<div class="result-modal" id="resultModal"><div class="result-card"><span id="resultKicker">STAGE CLEAR</span><h2 id="resultTitle">성공!</h2><strong id="resultScore">0점</strong><p id="resultDetail"></p><div class="reward"><span>보상</span><b id="resultReward">+0 GOLD</b><small id="resultUnlock"></small></div><button id="retryButton">다시 도전</button><button class="text-button" id="nextButton">다음 스테이지</button><button class="text-button" id="homeButton">메인으로</button></div></div>
+<div class="result-modal" id="resultModal"><div class="result-card"><span id="resultKicker">NEW RECORD</span><div class="result-poop" id="resultPoop">●</div><h2 id="resultGrade">PERFECT!</h2><strong id="resultDistance">0 m</strong><p id="resultDetail">10 POWER · 일반똥</p><div class="reward">획득 코인 <b id="resultCoins">+0</b></div><button id="retryButton">한 번 더!</button><button class="text-button" id="homeButton">메인으로</button></div></div>
 <div class="toast" id="toast"></div>
 <script src="main.js"></script>
 </body>
