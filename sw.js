@@ -1,7 +1,7 @@
-const CACHE = "poop-home-run-v7";
+const CACHE = "poop-home-run-v8";
 const ASSETS = [
   "./", "./index.html", "./style.css", "./main.js", "./manifest.webmanifest", "./icon.svg",
-  "./UI/main-page.png", "./UI/gameplay-screen-1.png", "./UI/boss.png", "./UI/faces.png"
+  "./UI/main-page.png", "./UI/gameplay-screen.png", "./UI/tool.png", "./UI/boss.png", "./UI/faces.png"
 ];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))));
