@@ -1,4 +1,4 @@
-const CACHE = "poop-home-run-v10";
+const CACHE = "poop-home-run-v12";
 const ASSETS = [
   "./", "./index.html", "./style.css", "./main.js", "./manifest.webmanifest", "./icon.svg",
   "./UI/main-page.png", "./UI/tool.png", "./UI/boss.png", "./UI/faces.png"
