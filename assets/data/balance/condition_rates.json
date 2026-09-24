@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "conditionRates": {
+    "good": {
+      "normal": 45,
+      "fast": 20,
+      "heavy": 10,
+      "split": 10,
+      "gold": 10,
+      "poison": 0,
+      "bomb": 5
+    },
+    "normal": {
+      "normal": 60,
+      "fast": 15,
+      "heavy": 10,
+      "split": 5,
+      "gold": 3,
+      "poison": 2,
+      "bomb": 5
+    },
+    "bad": {
+      "normal": 40,
+      "fast": 10,
+      "heavy": 15,
+      "split": 5,
+      "gold": 2,
+      "poison": 20,
+      "bomb": 8
+    },
+    "urgent": {
+      "normal": 25,
+      "fast": 40,
+      "heavy": 10,
+      "split": 10,
+      "gold": 3,
+      "poison": 2,
+      "bomb": 10
+    }
+  }
+}

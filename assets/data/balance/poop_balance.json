@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "poops": {
+    "normal": {
+      "speed": 520,
+      "radius": 42,
+      "score": 100,
+      "difficulty": 1,
+      "assetId": "poop_normal",
+      "hitboxId": "poop_circle_42"
+    },
+    "fast": {
+      "speed": 780,
+      "radius": 35,
+      "score": 150,
+      "difficulty": 2,
+      "assetId": "poop_fast",
+      "hitboxId": "poop_circle_35"
+    },
+    "heavy": {
+      "speed": 350,
+      "radius": 60,
+      "score": 200,
+      "difficulty": 2,
+      "assetId": "poop_heavy",
+      "hitboxId": "poop_circle_60"
+    },
+    "split": {
+      "speed": 450,
+      "radius": 40,
+      "score": 250,
+      "difficulty": 3,
+      "assetId": "poop_split",
+      "hitboxId": "poop_circle_40"
+    },
+    "gold": {
+      "speed": 600,
+      "radius": 38,
+      "score": 500,
+      "difficulty": 3,
+      "assetId": "poop_gold",
+      "hitboxId": "poop_circle_38"
+    },
+    "poison": {
+      "speed": 480,
+      "radius": 42,
+      "score": 100,
+      "difficulty": 3,
+      "assetId": "poop_poison",
+      "hitboxId": "poop_circle_42"
+    },
+    "bomb": {
+      "speed": 400,
+      "radius": 50,
+      "score": 150,
+      "difficulty": 2,
+      "assetId": "poop_bomb",
+      "hitboxId": "poop_circle_50"
+    }
+  }
+}
