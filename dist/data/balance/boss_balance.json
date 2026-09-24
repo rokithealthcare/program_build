@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "bosses": {
+    "toilet_golem": {
+      "hp": 6000,
+      "patternSelect": "weighted_cooldown",
+      "patterns": [
+        {
+          "patternId": "shield_bash",
+          "cooldownSec": 8.0,
+          "weight": 50
+        },
+        {
+          "patternId": "giant_poop_drop",
+          "cooldownSec": 12.0,
+          "weight": 50
+        }
+      ]
+    }
+  }
+}

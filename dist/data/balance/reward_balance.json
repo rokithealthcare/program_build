@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "rewards": {
+    "reward_stage_01": {
+      "baseCoin": 100,
+      "baseExp": 50,
+      "firstClearBonusCoin": 200
+    },
+    "reward_stage_02": {
+      "baseCoin": 150,
+      "baseExp": 75,
+      "firstClearBonusCoin": 300
+    },
+    "reward_stage_03": {
+      "baseCoin": 200,
+      "baseExp": 100,
+      "firstClearBonusCoin": 400
+    },
+    "reward_stage_04": {
+      "baseCoin": 250,
+      "baseExp": 125,
+      "firstClearBonusCoin": 500
+    },
+    "reward_stage_05": {
+      "baseCoin": 500,
+      "baseExp": 250,
+      "firstClearBonusCoin": 1000
+    }
+  }
+}

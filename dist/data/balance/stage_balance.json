@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "stages": {
+    "stage_001": {
+      "name": "첫 발사",
+      "timeLimitSec": 90,
+      "targetScore": 2500,
+      "spawnIntervalMs": 1500,
+      "conditionPool": ["normal"],
+      "bossId": null,
+      "rewardTableId": "reward_stage_01"
+    },
+    "stage_002": {
+      "name": "배탈의 조짐",
+      "timeLimitSec": 90,
+      "targetScore": 5000,
+      "spawnIntervalMs": 1200,
+      "conditionPool": ["normal", "bad"],
+      "bossId": null,
+      "rewardTableId": "reward_stage_02"
+    },
+    "stage_003": {
+      "name": "폭풍 전야",
+      "timeLimitSec": 100,
+      "targetScore": 8000,
+      "spawnIntervalMs": 1000,
+      "conditionPool": ["normal", "good", "bad"],
+      "bossId": null,
+      "rewardTableId": "reward_stage_03"
+    },
+    "stage_004": {
+      "name": "매우 급함",
+      "timeLimitSec": 100,
+      "targetScore": 12000,
+      "spawnIntervalMs": 800,
+      "conditionPool": ["urgent"],
+      "bossId": null,
+      "rewardTableId": "reward_stage_04"
+    },
+    "stage_005": {
+      "name": "보스: 변기 골렘",
+      "timeLimitSec": 120,
+      "targetScore": 20000,
+      "spawnIntervalMs": 700,
+      "conditionPool": ["normal", "urgent"],
+      "bossId": "toilet_golem",
+      "rewardTableId": "reward_stage_05"
+    }
+  }
+}
